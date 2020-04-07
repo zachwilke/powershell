@@ -1,0 +1,1 @@
+﻿remove-MailboxFolderPermission -Identity tarpon@fellowshipchurch.com:\calendar -user "katlin.swanson@fellowshipchurch.com"
