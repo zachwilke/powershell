@@ -1,1 +1,1 @@
-﻿remove-MailboxFolderPermission -Identity tarpon@fellowshipchurch.com:\calendar -user "katlin.swanson@fellowshipchurch.com"
+﻿remove-MailboxFolderPermission -Identity givingpermission@example.com:\calendar -user "gettingpermission@example.com"
