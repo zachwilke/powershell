@@ -1,4 +1,6 @@
-#Connect to VPN and sign in as the user. Following scripts done in User account.
+#Purpose of this script is to map network drives and transfer files from old user computer.
+
+#While on local network, sign in as the user. Following scripts done in User account.
 
 #Map Drive
 $conf = Read-Host "Would you like to map the user's network drives (y/n)?"
@@ -17,7 +19,7 @@ net use p: \\file location\file /user:$domain\$username $Credential /PERSISTENT:
 }
 if ($conf -eq 'n')
 {
-    Write-Host "
+    Write-Error "
         --------------------
         Drive Mapping Denied
         --------------------
@@ -64,20 +66,31 @@ if ($confone -eq 'y')
             "
         }
     }
-    if ($confthree -eq 'n')
+    if ($conftwo -eq 'n')
     {
+        Write-Error "
+        -----------------------
+        File Transfer Denied. 
+        -----------------------
+        "
         Write-Host "
-        ---------------------------------------
-        File Transfer Canceled. Setup complete.
-        ---------------------------------------
+        --------------
+        Setup complete
+        --------------
         "
     }
 if ($confone -eq 'n')
     {
+        Write-Error "
+        -----------------------
+        File Transfer Denied. 
+        -----------------------
+        "
         Write-Host "
-        -------------------------------------
-        File Transfer Denied. Setup Complete
-        -------------------------------------
+        --------------
+        Setup complete
+        --------------
         "
     }
+
 
