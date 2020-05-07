@@ -7,14 +7,6 @@ Rename-Computer $name
 $domain = Read-Host -Prompt "What domain will this computer be on?"
 Add-Computer -DomainName $domain
 
-#Now Running Updates
-#Install Updates Module
-Install-Module -Name PSWindowsUpdate
-
-#Run Windows Updates and auto-reboot
-Get-WindowsUpdate -Install -AcceptAll -AutoReboot
-
-
 Write-Host "
 -----------------------------------
 Initial Setup and Updates Complete.
