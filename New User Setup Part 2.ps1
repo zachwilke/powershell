@@ -1,16 +1,26 @@
-#Purpose of this script is to map network drives and transfer files from old user computer.
-
-#While on local network, sign in as the user. Following scripts done in User account.
+#Connect to VPN and sign in as the user. Following scripts done in User account.
 
 #Map Drive
-$conf = Read-Host "Would you like to map the user's network drives (y/n)?"
-if ($conf -eq 'y')
-{
+
+Write-Host "
+
+-----------------------
+
+\\Beginning PC setup\\
+
+-----------------------
+
+"
+
 $domain = Read-Host -Prompt "What is the user's domain?"
 $username = Read-Host -Prompt "What is this user's username?"
 $Credential = Get-Credential $domain\$username
 $oldip = Read-Host -Prompt "What is the IP of the Old PC?"
 
+
+$conf = Read-Host "Would you like to map the user's network drives (y/n)?"
+if ($conf -eq 'y')
+{
 net use u: \\file location\file /user:$domain\$username $Credential /PERSISTENT:yes
 
 net use s: \\file location\file /user:$domain\$username $Credential /PERSISTENT:yes
