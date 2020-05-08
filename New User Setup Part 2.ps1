@@ -2,16 +2,6 @@
 
 #Map Drive
 
-Write-Host "
-
------------------------
-
-\\Beginning PC setup\\
-
------------------------
-
-"
-
 $domain = Read-Host -Prompt "What is the user's domain?"
 $username = Read-Host -Prompt "What is this user's username?"
 $Credential = Get-Credential $domain\$username
