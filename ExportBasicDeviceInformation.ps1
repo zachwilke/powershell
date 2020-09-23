@@ -1,3 +1,8 @@
+#This script is to pull basic computer information for quick analysis and data collection.
+#PSVersion needs to be at least PS 5.1 or later.
+#Author: Zach Wilke
+
+
 #Elevate Powershell to Admin
 if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))  
 {  
@@ -6,12 +11,6 @@ if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
   Break
 }
 
-#checks execution policy and sets to remote signed if anything else
-$execpolicy = Get-ExecutionPolicy
-
-if ($execpolicy -ne 'RemoteSigned') {
-    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-}
 
 #queries computer data and stores in variable
 
