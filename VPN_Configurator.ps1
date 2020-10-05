@@ -84,8 +84,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
     
     #Option1
         if ($x -eq 'Option1') {
-    Add-VpnConnection -Name "Option1 VPN" -ServerAddress "0.1.2.3" -TunnelType "Automatic" -EncryptionLevel "Optional" -AuthenticationMethod MSCHAPv2 -SplitTunneling -AllUserConnection -L2tpPsk "presharedkey" -Force -RememberCredential -PassThru
-    }
+        Add-VpnConnection -Name "Option1 VPN" -ServerAddress "0.1.2.3" -TunnelType "Automatic" -EncryptionLevel "Optional" -AuthenticationMethod MSCHAPv2 -SplitTunneling -AllUserConnection -L2tpPsk "presharedkey" -Force -RememberCredential -PassThru
+        }
 
     #Option2
         if ($x -eq 'Option2') {
